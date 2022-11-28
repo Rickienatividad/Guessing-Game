@@ -42,12 +42,12 @@ export function Mystery() {
 
   return (
     <div>
-      <div>
+      <div className="question-box mb-10">
         <h1>?</h1>
       </div>
       <div className="flexbox">
         <div className="flexinput">
-          <input onInput={handleGuess} type="text" />
+          <input className="guess-box" onInput={handleGuess} type="text" />
           <div>
             <button onClick={checkGuess}>Check!</button>
           </div>

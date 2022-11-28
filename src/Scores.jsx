@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 export function Scores(props) {
   return (
     <div>
-      <div>
+      <div className="mb-5">
         <p>{props.notification}</p>
       </div>
       <div>
