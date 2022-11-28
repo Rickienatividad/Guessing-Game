@@ -5,6 +5,7 @@ export function Mystery() {
   const [guessedNumber, setGuessedNumber] = useState("");
   const [randomNum, setRandomNum] = useState("");
   const [score, setScore] = useState(20);
+  const [notification, setNotification] = useState("Start guessing...");
 
   const generateRandomNum = () => {
     setRandomNum(Math.trunc(Math.random() * 20 + 1));
@@ -22,9 +23,11 @@ export function Mystery() {
     } else if (guessedNumber > randomNum) {
       console.log("too high");
       setScore(score - 1);
+      setNotification("TOO HIGH!!");
     } else {
       console.log("too low");
       setScore(score - 1);
+      setNotification("TOO LOW!!");
     }
   };
 
@@ -41,7 +44,7 @@ export function Mystery() {
           </div>
         </div>
         <div className="flexscores">
-          <Scores score={score} />
+          <Scores score={score} notification={notification} />
         </div>
       </div>
     </div>
