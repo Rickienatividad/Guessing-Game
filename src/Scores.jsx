@@ -1,8 +1,6 @@
 import { useState, useEffect } from "react";
 
 export function Scores(props) {
-  const [highScore, setHighScore] = useState("");
-
   return (
     <div>
       <div>
@@ -12,8 +10,9 @@ export function Scores(props) {
         <p>Score: {props.score}</p>
       </div>
       <div>
-        <p>High Score: {highScore}</p>
+        <p>High Score: {props.highScore}</p>
       </div>
+      <button onClick={props.onReset}>Reset Game</button>
     </div>
   );
 }

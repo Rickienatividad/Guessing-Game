@@ -6,6 +6,7 @@ export function Mystery() {
   const [randomNum, setRandomNum] = useState("");
   const [score, setScore] = useState(20);
   const [notification, setNotification] = useState("Start guessing...");
+  const [highScore, setHighScore] = useState("");
 
   const generateRandomNum = () => {
     setRandomNum(Math.trunc(Math.random() * 20 + 1));
@@ -31,6 +32,11 @@ export function Mystery() {
     }
   };
 
+  const resetGame = () => {
+    setRandomNum(Math.trunc(Math.random() * 20 + 1));
+    setScore(20);
+  };
+
   return (
     <div>
       <div>
@@ -44,7 +50,12 @@ export function Mystery() {
           </div>
         </div>
         <div className="flexscores">
-          <Scores score={score} notification={notification} />
+          <Scores
+            score={score}
+            notification={notification}
+            highScore={highScore}
+            onReset={resetGame}
+          />
         </div>
       </div>
     </div>
