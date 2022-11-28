@@ -6,7 +6,7 @@ export function Mystery() {
   const [randomNum, setRandomNum] = useState("");
   const [score, setScore] = useState(20);
   const [notification, setNotification] = useState("Start guessing...");
-  const [highScore, setHighScore] = useState("");
+  const [highScore, setHighScore] = useState(0);
 
   const generateRandomNum = () => {
     setRandomNum(Math.trunc(Math.random() * 20 + 1));
@@ -21,6 +21,9 @@ export function Mystery() {
   const checkGuess = () => {
     if (guessedNumber == randomNum) {
       console.log("correct");
+      if (score > highScore) {
+        setHighScore(score);
+      }
     } else if (guessedNumber > randomNum) {
       console.log("too high");
       setScore(score - 1);
