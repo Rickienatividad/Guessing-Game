@@ -21,6 +21,7 @@ export function Mystery() {
   const checkGuess = () => {
     if (guessedNumber == randomNum) {
       console.log("correct");
+      setNotification("CORRECT!!");
       if (score > highScore) {
         setHighScore(score);
       }
@@ -47,9 +48,11 @@ export function Mystery() {
       </div>
       <div className="flexbox">
         <div className="flexinput">
-          <input className="guess-box" onInput={handleGuess} type="text" />
+          <input className="guess-box mb-5" onInput={handleGuess} type="text" />
           <div>
-            <button onClick={checkGuess}>Check!</button>
+            <button className="guess-btn" onClick={checkGuess}>
+              Check!
+            </button>
           </div>
         </div>
         <div className="flexscores">

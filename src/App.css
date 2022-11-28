@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
-
+button {
+  font-family:"Press Start 2P", sans-serif;
+}
 body {
   background-color: rgb(15, 15, 15);
   color: #fff;
@@ -49,4 +51,9 @@ body {
 .flexbox {
   display: flex;
   justify-content: space-evenly;
+}
+
+.guess-btn {
+  width: 8rem;
+  height: 3rem;
 }

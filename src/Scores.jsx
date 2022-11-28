@@ -12,7 +12,9 @@ export function Scores(props) {
       <div>
         <p>High Score: {props.highScore}</p>
       </div>
-      <button onClick={props.onReset}>Reset Game</button>
+      <button className="guess-btn" onClick={props.onReset}>
+        Reset Game
+      </button>
     </div>
   );
 }
