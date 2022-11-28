@@ -34,11 +34,16 @@ export function Mystery() {
       setScore(score - 1);
       setNotification("TOO LOW!!");
     }
+    if (score <= 1) {
+      setNotification("GAME OVER!");
+      document.body.style.backgroundColor = "red";
+    }
   };
 
   const resetGame = () => {
     setRandomNum(Math.trunc(Math.random() * 20 + 1));
     setScore(20);
+    document.body.style.backgroundColor = "rgb(15,15,15)";
   };
 
   return (
