@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Scores } from "./Scores";
 
 export function Mystery() {
   const [guessedNumber, setGuessedNumber] = useState("");
@@ -28,10 +29,15 @@ export function Mystery() {
       <div>
         <h1>?</h1>
       </div>
-      <div>
-        <input onInput={handleGuess} type="text" />
-        <div>
-          <button onClick={checkGuess}>Check!</button>
+      <div className="flexbox">
+        <div className="flexinput">
+          <input onInput={handleGuess} type="text" />
+          <div>
+            <button onClick={checkGuess}>Check!</button>
+          </div>
+        </div>
+        <div className="flexscores">
+          <Scores />
         </div>
       </div>
     </div>
