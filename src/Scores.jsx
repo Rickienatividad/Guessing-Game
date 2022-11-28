@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-export function Scores() {
+
+export function Scores(props) {
   const [notification, setNotification] = useState("Start guessing...");
-  const [score, setScore] = useState(20);
-  const [highscore, setHighScore] = useState("");
+  const [highScore, setHighScore] = useState("");
 
   return (
     <div>
@@ -10,10 +10,10 @@ export function Scores() {
         <p>{notification}</p>
       </div>
       <div>
-        <p>Score: {score}</p>
+        <p>Score: {props.score}</p>
       </div>
       <div>
-        <p>High Score: {highscore}</p>
+        <p>High Score: {highScore}</p>
       </div>
     </div>
   );

@@ -4,6 +4,8 @@ import { Scores } from "./Scores";
 export function Mystery() {
   const [guessedNumber, setGuessedNumber] = useState("");
   const [randomNum, setRandomNum] = useState("");
+  const [score, setScore] = useState(20);
+
   const generateRandomNum = () => {
     setRandomNum(Math.trunc(Math.random() * 20 + 1));
   };
@@ -19,8 +21,10 @@ export function Mystery() {
       console.log("correct");
     } else if (guessedNumber > randomNum) {
       console.log("too high");
+      setScore(score - 1);
     } else {
       console.log("too low");
+      setScore(score - 1);
     }
   };
 
@@ -37,7 +41,7 @@ export function Mystery() {
           </div>
         </div>
         <div className="flexscores">
-          <Scores />
+          <Scores score={score} />
         </div>
       </div>
     </div>
