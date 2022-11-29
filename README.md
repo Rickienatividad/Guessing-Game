@@ -1,0 +1,3 @@
+# Guessing-Game
+
+This is a simple guess the number game. I modeled this after an exercise in Jonas Schmedtmann's modern javascript course. The difference is that I created my project using React.js instead of vanilla javascript as a way of practicing some basic concepts. The game generates a random number and you are to enter your guess in the text input. If your number is incorrect you will notice your score decrease. If it reaches zero the game is over and the background changes to red. The highscore will be saved as long as you don't refresh the screen. To reset the game without losing your highscore, simply press the reset button on the right side of the screen.
